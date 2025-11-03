@@ -52,3 +52,14 @@ meal-planner/
 3. **Fill Details**: Enter your meal name and optional description
 4. **Save**: Your meal is added to the day's plan
 5. **Shopping List**: Click the shopping list button to view ingredients
+
+## Upcoming Features
+
+- 🔄 **Edit & Delete Meals**: Modify or remove existing meals from the plan
+- 🔍 **Recipe Search**: Search and import recipes from online sources
+- 📱 **Mobile Responsive**: Enhanced mobile experience
+- 👥 **Family Sharing**: Share meal plans with family members as pdf
+- 🎨 **Custom Themes**: Personalize the app appearance
+- 📈 **Weekly Reports**: Track your meal planning consistency
+- 🍳 **Quick Meal Templates**: Save common meal configurations
+- 📚 **Meal History**: Access and view meal plans from previous weeks
