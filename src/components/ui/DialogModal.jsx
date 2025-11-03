@@ -3,7 +3,13 @@ import Button from "./Button";
 
 // const wait = () => new Promise((resolve) => setTimeout(resolve, 1000));
 
-const DialogModal = ({ button, title, description, children, onSave }) => {
+const DialogModal = ({
+  button,
+  title = "",
+  description = "",
+  children,
+  onSave
+}) => {
   return (
     <Dialog.Root>
       <Dialog.Trigger>{button}</Dialog.Trigger>

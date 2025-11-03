@@ -1,10 +1,9 @@
 import Button from "./ui/Button";
-import { FaPlus } from "react-icons/fa";
+import { FaPlus, FaRegTrashAlt, FaPencilAlt } from "react-icons/fa";
 import DialogModal from "./ui/DialogModal";
 import { useState } from "react";
 
 const Card = ({ item, isToday, onSave, data }) => {
-  // console.log("🚀 ~ Card ~ item:", item);
   const [title, setTitle] = useState("");
   const [showAddButton, setShowAddButton] = useState(true);
   const [description, setDescription] = useState("");
@@ -28,8 +27,10 @@ const Card = ({ item, isToday, onSave, data }) => {
     >
       <div
         className={`text-center p-2 ${
-          isToday ? "bg-green-500 text-white" : "bg-green-50"
-        } rounded-t-lg`}
+          isToday
+            ? "bg-green-500 text-white rounded-t-sm"
+            : "bg-green-50 rounded-t-lg"
+        } `}
         onClick={() => setShowAddButton((prev) => !prev)}
       >
         <div>{item.day}</div>
@@ -44,16 +45,23 @@ const Card = ({ item, isToday, onSave, data }) => {
             {data?.[item.key]?.[meal.id]?.length && (
               <div className="grid gap-1">
                 {data?.[item.key]?.[meal.id].map((m, i) => (
-                  <div
-                    key={meal + m.title + i}
-                    className="shadow p-1 rounded-sm flex"
-                  >
-                    {i + 1}.
-                    <div className="ml-1 break-all">
-                      <div>{m.title}</div>
-                      <div className="text-sm text-gray-500">
-                        {m.description}
+                  <div className="shadow p-1 rounded-sm grid gap-1 group">
+                    <div key={meal + m.title + i} className="flex">
+                      {i + 1}.
+                      <div className="ml-1 break-all">
+                        <div>{m.title}</div>
+                        <div className="text-sm text-gray-500">
+                          {m.description}
+                        </div>
                       </div>
+                    </div>
+                    <div className="justify-center hidden group-hover:flex gap-2">
+                      <Button type="icon">
+                        <FaPencilAlt className="size-3" />
+                      </Button>
+                      <Button type="icon">
+                        <FaRegTrashAlt className="size-3" />
+                      </Button>
                     </div>
                   </div>
                 ))}

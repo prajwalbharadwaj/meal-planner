@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Card from "./components/Card";
 import Button from "./components/ui/Button";
 import { useState } from "react";
+import ShoppingList from "./components/ShoppingList";
 
 const App = () => {
   dayjs.extend(weekOfYear);
@@ -12,25 +13,16 @@ const App = () => {
   const currentWeek = dayjs().week();
   const startOfWeek = dayjs().startOf("week");
   const endOfWeek = dayjs().endOf("week");
-  // const id = crypto.randomUUID().split("-")[0];
   const weekDates = Array.from({ length: 7 }, (_, i) => ({
-    // id,
     id: crypto.randomUUID().split("-")[0],
     fullDate: startOfWeek.add(i, "day").format("YYYY-MM-DD"),
     key: startOfWeek.add(i, "day").format("YYYYMMDD"),
     day: startOfWeek.add(i, "day").format("ddd"),
     month: startOfWeek.add(i, "day").format("MMM"),
     date: startOfWeek.add(i, "day").format("DD")
-    // data: {
-    //   breakfast: { title: "Breakfast", description: "Breakfast" },
-    //   lunch: { title: "Lunch", description: "Lunch" },
-    //   dinner: { title: "Dinner", description: "Dinner" }
-    // }
   }));
 
-  const isActive = (date) => {
-    return date === dayjs().format("YYYY-MM-DD");
-  };
+  const isActive = (date) => date === dayjs().format("YYYY-MM-DD");
 
   const onSave = (payload = {}) => {
     setMealData((prev) => {
@@ -49,7 +41,6 @@ const App = () => {
       };
     });
   };
-  // console.log("🚀 ~ App ~ onSave", mealData);
 
   return (
     <div>
@@ -62,7 +53,7 @@ const App = () => {
           </div>
           <div className="text-gray-500">Plan your weekly meals</div>
         </div>
-        <Button type="outline">Shipping List</Button>
+        <ShoppingList />
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-7 gap-4 max-w-7xl mx-auto mb-5 px-4">
         {weekDates.map((item) => (
@@ -72,9 +63,7 @@ const App = () => {
             data={mealData}
             isToday={isActive(item.fullDate)}
             onSave={onSave}
-          >
-            asd{item}
-          </Card>
+          />
         ))}
       </div>
     </div>

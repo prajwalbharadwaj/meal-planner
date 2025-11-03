@@ -1,4 +1,4 @@
-const Button = ({ children, type = "button" }) => {
+const Button = ({ children, type = "button", className }) => {
   let classes = "";
   if (type === "button") {
     classes +=
@@ -10,10 +10,15 @@ const Button = ({ children, type = "button" }) => {
   } else if (type === "outline") {
     classes +=
       "py-2 px-4 rounded-xl border border-gray-200 hover:border-orange-300 hover:bg-orange-500 hover:text-white";
+  } else if (type === "icon") {
+    classes +=
+      "rounded-sm border border-gray-200 hover:border-orange-300 size-6";
   }
   return (
     <div
-      className={`flex items-center gap-2 justify-center cursor-pointer ${classes}`}
+      className={`flex items-center gap-2 justify-center cursor-pointer ${
+        classes + " " + className
+      }`}
     >
       {children}
     </div>
