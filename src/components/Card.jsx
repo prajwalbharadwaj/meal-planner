@@ -16,6 +16,8 @@ const Card = ({ item, isToday, onSave, data }) => {
 
   function handleSave(type) {
     onSave({ title, description, date: item.key, meal: type });
+    setTitle("");
+    setDescription("");
   }
 
   return (
@@ -47,9 +49,11 @@ const Card = ({ item, isToday, onSave, data }) => {
                     className="shadow p-1 rounded-sm flex"
                   >
                     {i + 1}.
-                    <div className="ml-1">
-                      <div className="break-all">{m.title}</div>
-                      <div>{m.description}</div>
+                    <div className="ml-1 break-all">
+                      <div>{m.title}</div>
+                      <div className="text-sm text-gray-500">
+                        {m.description}
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -75,6 +79,7 @@ const Card = ({ item, isToday, onSave, data }) => {
                       type="text"
                       placeholder="e.g., Scrambled eggs with toast"
                       value={title}
+                      required
                       onInput={(e) => setTitle(e.target.value)}
                     />
                   </div>
