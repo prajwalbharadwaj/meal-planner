@@ -1,16 +1,54 @@
-# React + Vite
+# Meal Planner
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, intuitive weekly meal planning application built with React and Vite. Plan your breakfast, lunch, and dinner for the entire week with an easy-to-use interface.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 📅 **Weekly View**: Visualize your entire week at a glance
+- 🍽️ **Multi-Meal Planning**: Plan breakfast, lunch, and dinner for each day
+- 📝 **Meal Details**: Add custom meal names and descriptions
+- 🛒 **Shopping List**: Generate and manage your grocery shopping list
+- 🎨 **Modern UI**: Built with Tailwind CSS and Radix UI components
+- ✨ **Interactive**: Today's date is highlighted for easy reference
+- 💾 **Local Storage**: Your meal plans are saved in the browser
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React 19**: Latest React with modern features
+- **Vite**: Fast build tool and dev server
+- **Tailwind CSS**: Utility-first CSS framework
+- **Radix UI**: Accessible component primitives
+- **Day.js**: Lightweight date manipulation
+- **React Icons**: Beautiful icon library
 
-## Expanding the ESLint configuration
+## Available Scripts
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- `pnpm dev` - Start development server with hot reload
+- `pnpm build` - Build for production
+- `pnpm preview` - Preview production build
+- `pnpm lint` - Run ESLint to check code quality
+
+## Project Structure
+
+```
+meal-planner/
+├── src/
+│   ├── components/
+│   │   ├── ui/           # Reusable UI components
+│   │   ├── Card.jsx      # Weekly day card component
+│   │   ├── Header.jsx    # Application header
+│   │   └── ShoppingList.jsx  # Shopping list feature
+│   ├── App.jsx           # Main application component
+│   ├── main.jsx          # Application entry point
+│   └── index.css         # Global styles
+├── public/               # Static assets
+└── package.json          # Dependencies and scripts
+```
+
+## Usage
+
+1. **View the Week**: Navigate through the current week displayed at the top
+2. **Add Meals**: Click "Add" under any meal category (Breakfast, Lunch, Dinner)
+3. **Fill Details**: Enter your meal name and optional description
+4. **Save**: Your meal is added to the day's plan
+5. **Shopping List**: Click the shopping list button to view ingredients
