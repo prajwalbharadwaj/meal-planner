@@ -18,8 +18,6 @@ const Card = ({ item, isToday, onSave, data }) => {
     onSave({ title, description, date: item.key, meal: type });
   }
 
-  // console.log(data[item.key]);
-
   return (
     <div
       className={`rounded-lg ${
